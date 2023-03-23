@@ -1,0 +1,9 @@
+body {
+  background: gray;
+}
+
+h1 {
+  font-size: 32px;
+  color: #fff;
+  font-family: 'Circular Std', sans-serif ;
+}
