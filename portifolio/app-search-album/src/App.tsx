@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Card } from './components/Card'
 import './styles.css'
+import { ArrowDown } from 'phosphor-react'
 
-const CLIENT_ID = "1f76879e76094509837047419b35563d"
-const CLIENT_SECRET = "7459f023beea4f869127d53aa96606d0"
+let clientID = '1f76879e76094509837047419b35563d'
+let clientSecret = '7459f023beea4f869127d53aa96606d0'
 
 export function App() {
   const [searchInput, setSearchInput] = useState("")
@@ -16,7 +17,7 @@ export function App() {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
+      body: 'grant_type=client_credentials&client_id=' + clientID + '&client_secret=' + clientSecret
     }
     
     fetch("https://accounts.spotify.com/api/token", authParams )
@@ -25,8 +26,6 @@ export function App() {
   }, [])
 
   async function search() {
-    console.log("Search for " + searchInput)
-
     let artistParams = {
       method: 'GET',
       headers: {
@@ -39,36 +38,44 @@ export function App() {
       .then(response => response.json())
       .then(data => { return data.artists.items[0].id})
 
-      console.log(artistID)
-
     let albums = await fetch("https://api.spotify.com/v1/artists/" + artistID + '/albums' + '?include_group=album&market=US&limit=50', artistParams)
       .then(response => response.json())
       .then(data => {
         console.log(data)
         setAlbums(data.items)
       })
-  }
+
+    }
   
   return (
-    <>
+    <main className="main-container">
+      <h1>find your favorite album</h1>
       <input 
         placeholder="search for artists"
         type="input"
-        
         onChange={e => setSearchInput(e.target.value)}
       />
       <button onClick={search}>
-        Search
+        Go!
       </button>
 
-      {albums.map((album, i) => {
-        return (
-          <Card
-            name={album.name}
-            img={album.images[0].url} 
-          />
-        )
-      })}
-    </>
+      <div className="card-container">
+        {albums.map((album, i) => {
+          return (
+            <Card
+              name={album.name}
+              img={album.images[0].url} 
+              key={album.id}
+            />
+          )
+        })}
+        {albums.length > 0 ?
+          <div className="glass-effect">
+          <ArrowDown size={52} color="#ffff" />
+          </div> : <p className="before-search">Nothing here yet, make your search... :-)</p> 
+        }
+         
+      </div>
+    </main>
   )
 }

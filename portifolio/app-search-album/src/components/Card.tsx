@@ -1,3 +1,4 @@
+import './styles.css'
 interface CardProps {
     name: string
     img: string
@@ -5,9 +6,9 @@ interface CardProps {
 
 export function Card({ name, img }: CardProps) {
   return (
-    <>
+    <div className="container">
       <p>{name}</p>
       <img src={img} />
-    </>
+    </div>
   )
 }
