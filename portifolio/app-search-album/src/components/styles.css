@@ -12,9 +12,9 @@
 .container p {
   color: #fff;
 
-  margin-right: 3px;
+  margin-right: 0.18rem;
 
-  height: 20px;
+  height: 1.25rem;
   display: flex;
   flex-wrap: wrap;
 }
