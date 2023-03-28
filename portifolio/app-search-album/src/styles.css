@@ -18,15 +18,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
 }
 
-.main-container {
-  padding: 50px;
-}
-
 h1 {
   font-size: 42px;
   color: #fff;
 
-  width: 350px;
+  width: 300px;
   display: flex;
   flex-wrap: wrap;
 
@@ -44,9 +40,40 @@ h1 {
   }
 }
 
+.main-container {
+  padding: 50px;
+}
+
+@media (max-width: 1350px) {
+  .card-container .glass-effect {
+    display: none;
+  }
+
+}
+
+@media (max-width: 665px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .main-container {
+    padding: 1rem;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+
 input {
   width: 22rem;
   height: 3.2rem;
+
+  margin-right: 1rem;
+  margin-top: 1rem;
 
   padding-left: 1rem;
   border: none;
@@ -78,8 +105,6 @@ button {
   width: 10rem;
   height: 3.2rem;
 
-  margin-left: 1rem;
-
   background: #560F6C;
   border-radius: 8px;
   border: none;
@@ -100,7 +125,6 @@ button:hover {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   justify-items: end;
-  
 }
 
 .before-search {
@@ -116,7 +140,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   
-  width: 1235px;
+  width: 91.5%;
   height: 60px;
   margin-top: 310px;
   position: fixed;

@@ -73,8 +73,7 @@ export function App() {
           <div className="glass-effect">
           <ArrowDown size={52} color="#ffff" />
           </div> : <p className="before-search">Nothing here yet, make your search... :-)</p> 
-        }
-         
+        } 
       </div>
     </main>
   )
