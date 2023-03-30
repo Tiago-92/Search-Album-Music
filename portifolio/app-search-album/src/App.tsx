@@ -3,8 +3,11 @@ import { Card } from './components/Card'
 import './styles.css'
 import { ArrowDown } from 'phosphor-react'
 
+import { i18n } from './translate/i18n'
+
 let clientID = '1f76879e76094509837047419b35563d'
 let clientSecret = '7459f023beea4f869127d53aa96606d0'
+let I18N_STORAGE_KEY = 'i18nextLng'
 
 export function App() {
   const [searchInput, setSearchInput] = useState("")
@@ -44,23 +47,39 @@ export function App() {
         console.log(data)
         setAlbums(data.items)
       })
-
     }
-  
+
+    function handleSelectChange(e) {
+      localStorage.setItem(
+        I18N_STORAGE_KEY,
+        e.target.value
+      )
+      window.location = window.location
+    }
+      
   return (
     <main className="main-container">
-      <h1>find your favorite album</h1>
+      <div className="header">
+        <h1>{i18n.t('titles.app')}</h1>
+
+        <select onChange={handleSelectChange}>
+          <option>{i18n.t('buttons.select')}</option>
+          <option value="pt-br">pt-BR</option>
+          <option value="en-us">en-US</option>
+        </select>
+      </div>
       <input 
-        placeholder="search for artists"
+        placeholder={i18n.t('messages.app')}
         type="input"
         onChange={e => setSearchInput(e.target.value)}
       />
       <button onClick={search}>
-        Go!
+      {i18n.t('buttons.search')}
       </button>
 
       <div className="card-container">
         {albums.map((album, i) => {
+          
           return (
             <Card
               name={album.name}
@@ -72,7 +91,7 @@ export function App() {
         {albums.length > 0 ?
           <div className="glass-effect">
           <ArrowDown size={52} color="#ffff" />
-          </div> : <p className="before-search">Nothing here yet, make your search... :-)</p> 
+          </div> : <p className="before-search">{i18n.t('messages.paragraph')}</p> 
         } 
       </div>
     </main>
