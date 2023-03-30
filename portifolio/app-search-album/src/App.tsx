@@ -5,14 +5,16 @@ import { ArrowDown } from 'phosphor-react'
 
 import { i18n } from './translate/i18n'
 
-let clientID = '1f76879e76094509837047419b35563d'
-let clientSecret = '7459f023beea4f869127d53aa96606d0'
+const clientID = process.env.CLIENT_ID
+const clientSecret = process.env.CLIENT_SECRET
 let I18N_STORAGE_KEY = 'i18nextLng'
 
 export function App() {
   const [searchInput, setSearchInput] = useState("")
   const [accessToken, setAccessToken] = useState("")
   const [albums, setAlbums] = useState([])
+
+  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY))
 
   useEffect(() => {
     let authParams = {
@@ -62,8 +64,8 @@ export function App() {
       <div className="header">
         <h1>{i18n.t('titles.app')}</h1>
 
-        <select onChange={handleSelectChange}>
-          <option>{i18n.t('buttons.select')}</option>
+        <select onChange={handleSelectChange} value={language}>
+          <option>{language}</option>
           <option value="pt-br">pt-BR</option>
           <option value="en-us">en-US</option>
         </select>

@@ -2,14 +2,14 @@ const messages = {
   pt: {
     translations: {
       titles: {
-        app: 'Encontre o seu albúm favorito'
+        app: 'encontre o seu albúm favorito'
       },
       messages: {
         app: 'procure por artistas',
-        paragraph: 'Nada aqui por enquanto, faça sua busca',
+        paragraph: 'nada aqui por enquanto, faça sua busca',
       },
       buttons: {
-        search: 'Procurar',
+        search: 'procurar',
         select: 'idioma' 
       },
 
