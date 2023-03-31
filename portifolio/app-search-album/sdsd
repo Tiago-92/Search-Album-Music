@@ -1,0 +1,51 @@
+Olá pessoal,
+
+
+
+Hoje eu resolvi compartilhar com vocês meu útimo projeto pessoal desenvolvido.
+
+
+
+Basicamente a aplicação tem como propósito encontrar álbuns de músicas do seu artista favorito.
+
+
+
+Essa busca eu fiz através de uma requisição com API de Spotify. Muito legal, não?
+
+
+
+A experiência mais bacana em desenvolver esse projeto aconteceu devido ao escalonamento do app. No início era uma coisa bem simples (ainda é por sinal) porém eu consegui aplicar algumas coisas bem interessantes ao longo do desnvolvimento.
+
+
+
+Como eu mencionei, para fazer a busca das informações do artista eu utilizei a API do Spotify, o que foi bem bacana, porém um pouco difícil de trabalhar.
+
+
+
+Para deixar mais "bonitinho" usei alguns efeitos de transição, gradiente e "espelho embaçado". 
+
+
+
+A cereja do bolo, pra mim, foi a implementação de multi-idiomas com o framework i18next. É possível alternar o idioma da aplicação ente português-BR e inglês-US.
+
+
+
+E por fim, como em todo projeto, cabe melhorias, que eu já estou planejando para futuras versões. 
+
+
+
+Você pode conferir o código nesse repositório:
+
+https://lnkd.in/dGit_VQD
+
+
+
+Para o deploy, eu preciso fazer alguns ajustes. Quando conseguir vou atualizar esse post com o link.
+
+
+
+Se você leu até aqui obrigado por sua atenção 😊
+
+ 
+
+#frontend #react  #javaScript #spotify

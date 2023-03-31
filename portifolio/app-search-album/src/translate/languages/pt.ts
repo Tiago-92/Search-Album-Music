@@ -2,7 +2,7 @@ const messages = {
   pt: {
     translations: {
       titles: {
-        app: 'encontre o seu albúm favorito'
+        app: 'encontre o seu álbum favorito'
       },
       messages: {
         app: 'procure por artistas',
