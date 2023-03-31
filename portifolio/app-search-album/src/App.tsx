@@ -5,8 +5,8 @@ import { ArrowDown } from 'phosphor-react'
 
 import { i18n } from './translate/i18n'
 
-const clientID = process.env.CLIENT_ID
-const clientSecret = process.env.CLIENT_SECRET
+let clientID = import.meta.env.VITE_CLIENT_ID
+let clientSecret = import.meta.env.VITE_CLIENT_SECRET
 let I18N_STORAGE_KEY = 'i18nextLng'
 
 export function App() {
